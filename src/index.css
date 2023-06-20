@@ -1,0 +1,263 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+/* from previous project */
+
+.App {
+  text-align: center;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--font-color) !important;
+}
+
+a:hover {
+  color:rgb(186, 187, 184) !important;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+:root {
+  --header-bg: rgb(223, 228, 223);
+  --header-items-bg: rgb(234, 239, 234);
+  --main-bg: rgb(243, 245, 241);
+  --font-color: rgb(57, 67, 53);
+}
+
+* {
+  font-family: 'Manjari', sans-serif;
+  box-sizing: border-box;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+
+/* left nav styles */
+
+#logo {
+  border-radius: 50%;
+  width: 125px;
+  margin: 20% auto 40%;
+}
+
+header {
+  height: 100vh;
+  background-color: var(--header-bg);
+  width: 190px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+
+#cafe-title {
+  font-size: 26px;
+  max-width: 120px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;    
+  background-color: var(--header-items-bg);
+  color: var(--font-color);
+}
+
+#navigation-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18%;
+}
+
+#navigation-container ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    background-color: rgb(234, 239, 234);
+    justify-content: space-around;
+}
+
+#navigation-container p {
+    margin-top: 1.5rem;
+}
+
+@media only screen and (max-width: 576px) {
+  header {
+    display: none;
+  }
+}
+
+
+/* bootstrap main container styling */
+
+.container {
+  background-color: var(--main-bg);
+  min-width: 300px;
+}
+
+.guests-number-div {
+  font-size: 2rem;
+}
+
+.minus, .plus {
+  cursor: pointer;
+  padding: auto 1rem;
+}
+
+.minus:hover, .plus:hover {
+  transform: scale(1.4);
+}
+
+#top-title h1{
+  align-self: center;
+  font-size: 2rem;
+  color: var(--font-color);
+  flex-wrap: nowrap;
+}
+
+#lang-btn {
+  font-size: 1rem;
+}
+
+.card-container {
+  justify-content: space-around;
+}
+.card, .card-body {
+  background-color: rgb(248, 251, 248);
+  color: var(--font-color);
+}
+
+.card-title {
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--font-color);
+  padding-top: 4%;
+}
+.card {
+  max-width: 45%;
+  min-width: 300px;
+  margin: 5% auto;
+}
+
+#mini-card {
+  max-width: 70%;
+  background-color: white;
+}
+
+#mini-card-body {
+  height: 100%;
+  font-size: 1.2rem;
+}
+
+.mini-img {
+  max-width: 100px;
+}
+
+.tooltip-inner {
+  background-color: rgb(155, 164, 153);
+  font-size: 0.9rem;
+  padding-top: 8px;
+}
+
+
+/* map page */
+#map-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#google-map-1 {
+  width: 100%;
+  height: 450px;
+}
+
+
+
+/* korean map page */
+#naver-map {
+  width: 100%;
+}
+
