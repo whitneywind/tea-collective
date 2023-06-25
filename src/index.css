@@ -113,6 +113,12 @@ a:hover {
   width: 100vw;
 }
 
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
 
 /* left nav styles */
 

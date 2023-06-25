@@ -18,7 +18,6 @@ const ProductCard = ({ name, image, korName, quantity, totalItemPrice }: Product
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

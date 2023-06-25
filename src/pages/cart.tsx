@@ -28,9 +28,9 @@ const Cart = () => {
     }
 
      return (
-        <div className="container-fluid bg-light py-5">
+        <div className="cart-container bg-light py-5">
             <h1 className="text-center fw-bold">{langEng ? "Shopping Cart" : "장바구니"}</h1>
-            <div className="my-3 d-flex align-items-start flex-column align-items-end w-100">
+            <div className="my-3 d-flex align-items-start flex-column align-items-end">
                 {productsWithQuantities.map((product: ProductInCart, index: number) => (
                     <MiniProductCard {...product} key={index} />
                 ))}
