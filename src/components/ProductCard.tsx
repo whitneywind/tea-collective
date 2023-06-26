@@ -3,17 +3,6 @@ import { useProducts } from '../context/Context.tsx';
 
 const ProductCard = ({ name, idName, image, desc, price, korName, korDesc }: Product) => {
     const { addToCart, langEng } = useProducts();
-    // const [inCart, setInCart] = useState(false);
-
-    // useEffect(() => {
-    //     const productInCart = products.find((product) => product.name === name);
-
-    //     if (productInCart) {
-    //         setInCart(true);
-    //     } else {
-    //         setInCart(false);
-    //     }
-    // }, [products, name]);
 
     const handleClick = () => {
       // let uniqueId = Math.random().toFixed(0) * 10;
@@ -26,13 +15,11 @@ const ProductCard = ({ name, idName, image, desc, price, korName, korDesc }: Pro
     return (
     <div className="card" id={idName}>
             <img src={image} className="card-img-top" alt="..." />
-            <div className="card-title">{langEng ? name : korName}</div>
-            <div className="card-body">
-                <p>{langEng ? desc : korDesc}</p>
-                <div className='d-flex justify-content-between align-items-center'>
-                    <h5 className='my-auto'>${price}</h5>
-                    <button className='w-fit btn btn-light btn-sm btn-outline-success' onClick={handleClick}>{langEng ? 'Add to Cart' : '구매하기'}</button>
-                </div>
+            <h3 className="card-title text-center pt-4">{langEng ? name : korName}</h3>
+            <div className="card-body d-flex flex-column">
+                <h5 className='text-center'>${price}</h5>
+                <p className='text-center'>{langEng ? desc : korDesc}</p>
+                <button className='btn btn-light btn-md pt-2 pb-1 fw-bold btn-outline-success' onClick={handleClick}>{langEng ? 'Add to Cart' : '구매하기'}</button>
             </div>
     </div>
     )

@@ -11,16 +11,16 @@ const App = () => {
       <div>
         <nav>
           <div id="logo-container">
-            <a href="#">
+            <a href="/">
               <img id="logo" src={logo} alt="logo" />
             </a>
           </div>
           <a href="/">
-            <h1 id="cafe-title">{langEng ? 'Tea Collective' : '티컬렉티브'}</h1>
+            <h1 id="cafe-title" className="pt-1">{langEng ? 'Tea Collective' : '티컬렉티브'}</h1>
           </a>
           {langEng ? (
             <div id="navigation-container">
-            <p>general</p>
+            <p>directory</p>
             <ul id="nav-list-1">
               <Link to="/">home</Link>
               <Link to="/directions">directions</Link>

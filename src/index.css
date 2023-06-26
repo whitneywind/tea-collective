@@ -14,26 +14,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -45,31 +31,7 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-
-/* from previous project */
 
 .App {
   text-align: center;
@@ -117,6 +79,10 @@ a:hover {
   display: flex;
   flex-direction: column;
   width: 100vw;
+}
+
+.cart-back {
+  padding-left: 15px;
 }
 
 
@@ -186,13 +152,9 @@ header {
   font-size: 2rem;
 }
 
-.minus, .plus {
-  cursor: pointer;
-  padding: auto 1rem;
-}
-
 .minus:hover, .plus:hover {
   transform: scale(1.4);
+  cursor: pointer;
 }
 
 #top-title h1{
@@ -202,24 +164,11 @@ header {
   flex-wrap: nowrap;
 }
 
-#lang-btn {
-  font-size: 1rem;
-}
-
-.card-container {
-  justify-content: space-around;
-}
 .card, .card-body {
   background-color: rgb(248, 251, 248);
   color: var(--font-color);
 }
 
-.card-title {
-  font-size: 1.6rem;
-  text-align: center;
-  color: var(--font-color);
-  padding-top: 4%;
-}
 .card {
   max-width: 45%;
   min-width: 300px;
@@ -240,13 +189,6 @@ header {
   max-width: 100px;
 }
 
-.tooltip-inner {
-  background-color: rgb(155, 164, 153);
-  font-size: 0.9rem;
-  padding-top: 8px;
-}
-
-
 /* map page */
 #map-div {
   width: 100%;
@@ -260,10 +202,10 @@ header {
   height: 450px;
 }
 
-
-
 /* korean map page */
 #naver-map {
   width: 100%;
 }
+
+
 

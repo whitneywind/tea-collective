@@ -20,9 +20,9 @@ export const productData: Product[] = [
         idName: "sencha",
         price: 10,
         image: SenchaImg,
-        desc: "Sencha brews a balance of sweetness and astringency. This classic tea fits any occasion.",
+        desc: "Sencha brews a balance of sweetness and astringency. This classic tea neatly fits any occasion.",
         korName: "센차",
-        korDesc: "새로 난 찻잎을 곧 쪄서 비벼 만든 센차는 전통적이며 세상 널리 알려진 상품일수록 맛과 향이 좋음."
+        korDesc: "새로 난 찻잎을 곧 쪄서 비벼 만든 센차는 전통적이며 세상 널리 알려진 상품일수록 맛과 향이 좋고 소중하다."
     },
     {
         name: "Hojicha",
