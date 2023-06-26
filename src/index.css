@@ -33,10 +33,6 @@ button {
   cursor: pointer;
 }
 
-.App {
-  text-align: center;
-}
-
 a {
   text-decoration: none !important;
   color: var(--font-color) !important;
@@ -44,17 +40,6 @@ a {
 
 a:hover {
   color:rgb(186, 187, 184) !important;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 :root {
@@ -140,7 +125,6 @@ header {
   }
 }
 
-
 /* bootstrap main container styling */
 
 .container {
@@ -188,6 +172,24 @@ header {
 .mini-img {
   max-width: 100px;
 }
+
+
+/* card animation */
+@keyframes shrink {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.btn-added {
+  outline: none !important;
+  animation: shrink 0.5s ease forwards;
+  margin: 0 auto;
+}
+
 
 /* map page */
 #map-div {

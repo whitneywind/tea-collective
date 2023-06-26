@@ -1,16 +1,25 @@
+import { useState, useEffect } from 'react';
 import { Product } from '../../typings.ts';
 import { useProducts } from '../context/Context.tsx';
 
 const ProductCard = ({ name, idName, image, desc, price, korName, korDesc }: Product) => {
     const { addToCart, langEng } = useProducts();
+    const [addedToCart, setAddedToCart] = useState(false);
 
     const handleClick = () => {
-      // let uniqueId = Math.random().toFixed(0) * 10;
-
-       // add another prop to distinguish individual items 
+        setAddedToCart(true);
+    
         const product = { name, idName, image, desc, price, korName, korDesc };
         addToCart(product);
-    }
+      };
+    
+      useEffect(() => {
+        if (addedToCart) {
+            setAddedToCart(true);
+        }
+      }, [addedToCart]);
+
+    //   setInterval(() => {console.log('addedToCart: ', addedToCart)}, 1000)
 
     return (
     <div className="card" id={idName}>
@@ -19,7 +28,19 @@ const ProductCard = ({ name, idName, image, desc, price, korName, korDesc }: Pro
             <div className="card-body d-flex flex-column">
                 <h5 className='text-center'>${price}</h5>
                 <p className='text-center'>{langEng ? desc : korDesc}</p>
-                <button className='btn btn-light btn-md pt-2 pb-1 fw-bold btn-outline-success' onClick={handleClick}>{langEng ? 'Add to Cart' : '구매하기'}</button>
+            <button
+            className={`btn btn-md pt-2 pb-1 fw-bold btn-outline-success ${
+                addedToCart ? 'btn-added' : ''
+              }`}
+            onClick={handleClick}>
+            {addedToCart
+                ? langEng
+                ? 'Added to Cart'
+                : '추가했습니다'
+                : langEng
+                ? 'Add to Cart'
+                : '구매하기'}
+            </button>
             </div>
     </div>
     )
