@@ -5,9 +5,9 @@ const ProductCard = ({ name, idName, image, desc, price, korName, korDesc, quant
     const { langEng, addToCart, removeFromCart, products } = useProducts();
 
     const product: Product = { name, idName, image, desc, price, korName, korDesc, quantity, totalItemPrice }
-
-    const currQuantity: number = products.find(item => item.idName === idName) ? products.find(item => item.idName === idName)!.quantity : 0;
-    const currTotalItemPrice = products.find(item => item.idName === idName)?.totalItemPrice;
+    const currEl = products.find(item => item.idName === idName);
+    const currQuantity: number = currEl ? currEl.quantity : 0;
+    const currTotalItemPrice = currEl?.totalItemPrice;
 
     return (
         <div id="mini-card" className="card w-100 mb-2">

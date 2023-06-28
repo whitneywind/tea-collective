@@ -29,29 +29,27 @@ export const ProductContext = createContext<ContextProps>({
 const ProductProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
 
+// TO-DO: refactor add and remove into one
+
   const addToCart = (product: Product) => {
     const updatedProducts = [...state.products];
   
     const existingProductIndex = updatedProducts.findIndex((p) => p.idName === product.idName);
   
     if (existingProductIndex !== -1) {
-      // case: product already in cart
       updatedProducts[existingProductIndex] = {
         ...updatedProducts[existingProductIndex],
         quantity: updatedProducts[existingProductIndex].quantity + 1,
         totalItemPrice: updatedProducts[existingProductIndex].totalItemPrice + product.price,
       };
     } else {
-      // case: product not yet in cart
       const newProduct = {
         ...product,
         quantity: 1,
         totalItemPrice: product.price,
       };
       updatedProducts.push(newProduct);
-    }
-    // console.log('add. quantity: ', updatedProducts[existingProductIndex]?.quantity)
-  
+    }  
     dispatch({
       type: 'ADD_TO_CART',
       payload: {
@@ -64,9 +62,7 @@ const ProductProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const removeFromCart = (product: Product) => {
     const removalIndex = state.products.findIndex(p => p.idName === product.idName);
-
     let updatedProducts = [...state.products];
-    console.log(product.quantity);
 
   if (product.quantity > 1) {
       updatedProducts[removalIndex] = {

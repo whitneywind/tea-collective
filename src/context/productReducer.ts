@@ -10,7 +10,6 @@ export const productReducer = (state: State, action: Action): State => {
           products: payload!.products
         };
       case "REMOVE_FROM_CART":
-        // console.log('removing from cart', payload);
         return {
           ...state,
           products: payload!.products

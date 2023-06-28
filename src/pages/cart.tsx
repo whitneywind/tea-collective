@@ -3,31 +3,8 @@ import MiniProductCard from "../components/MiniProductCard";
 import { Product } from "../../typings";
 import { Link } from "react-router-dom";
 
-type ProductObject = Product[];
-
 const Cart = () => {
     const { products, total, langEng } = useProducts();
-    console.log('products in state in cart component: ', products)
-
-    const productsWithQuantities: ProductObject = [];
-
-    for (let i = 0; i < products.length; i++) {
-        const product = products[i];
-        const productId = product.idName;
-
-        const existingProdInd = productsWithQuantities.findIndex(p => p.idName === productId);
-
-        if (existingProdInd > -1) {
-            productsWithQuantities[existingProdInd].quantity++;
-            productsWithQuantities[existingProdInd].totalItemPrice = Math.floor(productsWithQuantities[existingProdInd].totalItemPrice + productsWithQuantities[existingProdInd].price)
-        } else {
-            productsWithQuantities.push({ 
-                ...product,
-                quantity: 1,
-                totalItemPrice: product.price
-            })
-        }
-    }
 
      return (
         <div className="cart-container bg-light pb-5">
@@ -39,7 +16,7 @@ const Cart = () => {
             </Link>
             <h1 className="text-center fw-bold pt-4">{langEng ? "Shopping Cart" : "장바구니"}</h1>
             <div className="my-3 d-flex align-items-start flex-column align-items-end">
-                {productsWithQuantities.map((product: Product, index: number) => (
+                {products.map((product: Product, index: number) => (
                     <MiniProductCard {...product} key={index} />
                 ))}
                 <h2 className="w-100 pt-5 text-center">{langEng ? "Your cart total is: " : "총 합계: "} ${total}</h2>
