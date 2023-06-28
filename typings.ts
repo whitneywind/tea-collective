@@ -6,9 +6,6 @@ export interface Product {
     desc: string;
     korName?: string;
     korDesc?: string;
-}
-
-export interface ProductInCart extends Product {
     quantity: number;
     totalItemPrice: number;
 }

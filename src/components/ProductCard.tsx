@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react';
 import { Product } from '../../typings.ts';
 import { useProducts } from '../context/Context.tsx';
 
-const ProductCard = ({ name, idName, image, desc, price, korName, korDesc }: Product) => {
+const ProductCard = ({ name, idName, image, desc, price, korName, korDesc, quantity, totalItemPrice }: Product) => {
     const { addToCart, langEng } = useProducts();
     const [addedToCart, setAddedToCart] = useState(false);
 
     const handleClick = () => {
         setAddedToCart(true);
     
-        const product = { name, idName, image, desc, price, korName, korDesc };
-        addToCart(product);
+        const product = { name, idName, image, desc, price, korName, korDesc, quantity, totalItemPrice };
+
+        addToCart(product)
       };
     
       useEffect(() => {
@@ -18,8 +19,6 @@ const ProductCard = ({ name, idName, image, desc, price, korName, korDesc }: Pro
             setAddedToCart(true);
         }
       }, [addedToCart]);
-
-    //   setInterval(() => {console.log('addedToCart: ', addedToCart)}, 1000)
 
     return (
     <div className="card" id={idName}>
