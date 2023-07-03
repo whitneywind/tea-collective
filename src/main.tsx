@@ -17,12 +17,12 @@ import ErrorPage from './pages/error.tsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "https://whitneywind.github.io/tea-collective/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "https://whitneywind.github.io/tea-collective/",
         element: <App />,
         children: [
           {
