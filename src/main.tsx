@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import Root from './root.tsx';
@@ -15,7 +15,7 @@ import Reservation from './pages/reserve.tsx';
 import ProductProvider from './context/Context.tsx';
 import ErrorPage from './pages/error.tsx';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
