@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://whitneywind.github.io/tea-collective/",
+  "homepage": "https://whitneywind.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
