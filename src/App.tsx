@@ -1,23 +1,39 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import logo from "./assets/IMG_7844.jpg"
 import { useProducts } from "./context/Context";
+import { useEffect } from "react";
 
 
 const App = () => {
   const { products, langEng, updateLang } = useProducts();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const targetEl = document.querySelector(hash);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo(0, 0); // Scroll to top when no hash present
+    }
+  }, [location]);
+
   return (
     <div className="body-container">
     <header>
       <div>
         <nav>
           <div id="logo-container">
-            <a href="/">
+            <Link to="/">
               <img id="logo" src={logo} alt="logo" />
-            </a>
+            </Link>
           </div>
-          <a href="/">
+          <Link to="/">
             <h1 id="cafe-title" className="pt-1">{langEng ? 'Tea Collective' : '티컬렉티브'}</h1>
-          </a>
+          </Link>
           {langEng ? (
             <div id="navigation-container">
             <p>directory</p>
@@ -29,16 +45,16 @@ const App = () => {
             <p>order online</p>
             <ul id="nav-list-2">
               <li>
-                <a href="/#matcha">matcha</a>
+                <Link to="#matcha">matcha</Link>
               </li>
               <li>
-                <a href="/#sencha">sencha</a>
+                <Link to="/#sencha">sencha</Link>
               </li>
               <li>
-                <a href="/#hojicha">hojicha</a>
+                <Link to="/#hojicha">hojicha</Link>
               </li>
               <li>
-                <a href="/#gyokuro">gyokuro</a>
+                <Link to="/#gyokuro">gyokuro</Link>
               </li>
             </ul>
           </div>) :  (
@@ -52,16 +68,16 @@ const App = () => {
             <p>주문하기</p>
             <ul id="nav-list-2">
               <li>
-                <a href="/#matcha">말자</a>
+                <Link to="tea-collective#matcha">말자</Link>
               </li>
               <li>
-                <a href="/#sencha">센차</a>
+                <Link to="/#sencha">센차</Link>
               </li>
               <li>
-                <a href="/#hojicha">호지차</a>
+                <Link to="/#hojicha">호지차</Link>
               </li>
               <li>
-                <a href="/#gyokuro">교쿠로</a>
+                <Link to="gyokuro">교쿠로</Link>
               </li>
             </ul>
           </div>
