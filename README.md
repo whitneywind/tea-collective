@@ -4,7 +4,7 @@ React Teashop is a responsive homepage for Tea Collective. This website has two 
 
 ![Site Overview](public/overview1.jpg)
 ![Site Overview2](public/overview-mobile.jpg)
-![Site Overview4](public/overview4.jpg)
+![Site Overview3](public/overview3.jpg)
 ![Site Overview5](public/overview5.jpg)
 
 # Tea Collective
